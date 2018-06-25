@@ -1,0 +1,4 @@
+graft src/gaipa
+graft docs
+include *.rst
+global-exclude *.pyc
