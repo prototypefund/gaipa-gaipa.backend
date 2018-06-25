@@ -3,6 +3,14 @@
   <permissions>
   <!-- -*- extra stuff goes here -*- -->
 
+    <permission name="gaipa.backend: Add Solutionarticles" acquire="True">
+      <role name="Manager"/>
+      <role name="Site Administrator"/>
+      <role name="Owner"/>
+      <role name="Contributor"/>
+    </permission>
+
+        
     <permission name="gaipa.backend: Add Navassistantcard" acquire="True">
       <role name="Manager"/>
       <role name="Site Administrator"/>

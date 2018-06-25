@@ -1,37 +1,35 @@
 <?xml version="1.0"?>
 <object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-    name="GaipaContent"
+    name="SolutionArticles"
     meta_type="Dexterity FTI"
     i18n:domain="gaipa.backend">
 
   <!-- Basic properties -->
   <property
       i18n:translate=""
-      name="title">GaipaContent</property>
+      name="title">SolutionArticles</property>
   <property
       i18n:translate=""
-      name="description">Container for gaipa content</property>
+      name="description">Container for Solution Articles</property>
 
   <property name="allow_discussion">False</property>
-  <property name="factory">GaipaContent</property>
+  <property name="factory">SolutionArticles</property>
   <property name="icon_expr"></property>
   <property name="link_target"></property>
 
   <!-- Hierarchy control -->
-  <property name="global_allow">True</property>
+  <property name="global_allow">False</property>
   <property name="filter_content_types">True</property>
   <property name="allowed_content_types">
-    <element value="SolutionArticles" />
-            <element value="NavAssistantCards" />
-          <!--
+  <!--
     <element value="Document" />
     <element value="File" />
   -->
   </property>
   <!-- Schema, class and security -->
-  <property name="add_permission">gaipa.backend.AddGaipacontent</property>
-  <property name="klass">gaipa.backend.content.gaipacontent.Gaipacontent</property>
-  <property name="model_file">gaipa.backend.content:gaipacontent.xml</property>
+  <property name="add_permission">gaipa.backend.AddSolutionarticles</property>
+  <property name="klass">gaipa.backend.content.solutionarticles.Solutionarticles</property>
+  <property name="model_file">gaipa.backend.content:solutionarticles.xml</property>
   <property name="model_source"></property>
   <property name="schema"></property>
 
@@ -55,7 +53,7 @@
   </property>
 
   <!-- View information -->
-  <property name="add_view_expr">string:${folder_url}/++add++GaipaContent</property>
+  <property name="add_view_expr">string:${folder_url}/++add++SolutionArticles</property>
   <property name="default_view">view</property>
   <property name="default_view_fallback">False</property>
   <property name="immediate_view">view</property>
