@@ -4,4 +4,5 @@
   <!--<object name="example_ct" meta_type="Dexterity FTI"/>-->
   <object meta_type="Dexterity FTI" name="GaipaContent"/>
   <object meta_type="Dexterity FTI" name="NavAssistantCards"/>
+  <object meta_type="Dexterity FTI" name="NavAssistantCard"/>
 </object>

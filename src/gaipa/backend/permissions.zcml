@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="gaipa.backend.AddNavassistantcard"
+        title="gaipa.backend: Add Navassistantcard"
+    />
+
+        
+    <permission
         id="gaipa.backend.AddNavassistantcards"
         title="gaipa.backend: Add Navassistantcards"
     />
