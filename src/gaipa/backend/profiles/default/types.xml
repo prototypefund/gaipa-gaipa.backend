@@ -7,4 +7,5 @@
   <object meta_type="Dexterity FTI" name="NavAssistantCard"/>
   <object meta_type="Dexterity FTI" name="SolutionArticles"/>
   <object meta_type="Dexterity FTI" name="SolutionArticle"/>
+  <object meta_type="Dexterity FTI" name="SolutionProviders"/>
 </object>
