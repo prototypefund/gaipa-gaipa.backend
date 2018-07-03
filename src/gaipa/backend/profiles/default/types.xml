@@ -9,4 +9,5 @@
   <object meta_type="Dexterity FTI" name="SolutionArticle"/>
   <object meta_type="Dexterity FTI" name="SolutionProviders"/>
   <object meta_type="Dexterity FTI" name="SolutionProvider"/>
+  <object meta_type="Dexterity FTI" name="SolutionServices"/>
 </object>

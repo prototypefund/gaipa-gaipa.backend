@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="gaipa.backend.AddSolutionservices"
+        title="gaipa.backend: Add Solutionservices"
+    />
+
+        
+    <permission
         id="gaipa.backend.AddSolutionprovider"
         title="gaipa.backend: Add Solutionprovider"
     />
