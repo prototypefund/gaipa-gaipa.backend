@@ -10,7 +10,7 @@
       name="title">SolutionProvider</property>
   <property
       i18n:translate=""
-      name="description">Solution Provider</property>
+      name="description"></property>
 
   <property name="allow_discussion">False</property>
   <property name="factory">SolutionProvider</property>
