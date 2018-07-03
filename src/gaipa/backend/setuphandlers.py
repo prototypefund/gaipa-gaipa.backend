@@ -58,6 +58,7 @@ def post_install(context):
         logger.info('Added {0} database'.format(
             solutions.absolute_url_path()))
 
+
 def uninstall(context):
     """Uninstall script"""
     # Do something at the end of the uninstallation of this package.
