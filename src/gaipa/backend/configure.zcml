@@ -42,6 +42,18 @@
       name="gaipa.backend-hiddenprofiles"
       />
 
+  <plone:CORSPolicy
+    allow_origin="http://localhost:4300,http://127.0.0.1:4300,http://localhost:3000,http://127.0.0.1:3000,http://app.gaipa.lan"
+    allow_methods="DELETE,GET,OPTIONS,PATCH,POST,PUT"
+    allow_credentials="true"
+    layer="gaipa.backend.interfaces.IGaipaBackendLayer"
+    expose_headers="Content-Length,X-My-Header"
+    allow_headers="DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Typ"
+    max_age="3600"
+    />
+
   <!-- -*- extra stuff goes here -*- -->
+
+
 
 </configure>

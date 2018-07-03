@@ -5,5 +5,13 @@
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     i18n:domain="gaipa.backend">
     <schema>
+    <field name="solutions" type="z3c.relationfield.schema.RelationList">
+      <title>Solutions</title>
+      <value_type type="z3c.relationfield.schema.RelationChoice">
+        <title>Solution</title>
+      </value_type>
+      <required>False</required>
+      <readonly>False</readonly>
+    </field>
     </schema>
 </model>

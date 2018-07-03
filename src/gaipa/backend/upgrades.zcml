@@ -3,14 +3,24 @@
   xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
 
   <!-- -*- extra stuff goes here -*- -->
-  <!--<genericsetup:upgradeStep
+  <genericsetup:upgradeStep
     source="*"
     destination="1001"
-    title="Reload GS profiles"
+    title="Reload GS profiles, to update NavAssistantCard FTI settings"
     description=""
     profile="gaipa.backend:default"
     handler=".upgrades.reload_gs_profile"
-    />-->
+    />
+
+  <genericsetup:upgradeStep
+    source="1001"
+    destination="1002"
+    title="Reload GS profiles, to update SolutionArticle FTI settings"
+    description=""
+    profile="gaipa.backend:default"
+    handler=".upgrades.reload_gs_profile"
+    />
+
 
 
 </configure>

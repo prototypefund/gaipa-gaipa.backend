@@ -26,7 +26,6 @@ def post_install(context):
     logger = logging.getLogger(PACKAGE_NAME)
     portal = api.portal.get()
     ptypes = portal.portal_types
-    # pub_quellen = api.content.get('/publikationen-quellen')
     if 'app' not in portal.objectIds():
         obj_id = ptypes.constructContent(
             'GaipaContent',
@@ -37,24 +36,25 @@ def post_install(context):
         app = portal[obj_id]
         logger.info('Added {0} database'.format(
             app.absolute_url_path()))
-    if 'cards' not in app.objectIds():
+    app = api.content.get('/app')
+    if 'card' not in app.objectIds():
         obj_id = ptypes.constructContent(
             'NavAssistantCards',
             app,
-            'cards',
+            'card',
             title=u'Navigation Assistant Cards',
         )
-        cards = portal[obj_id]
+        cards = app[obj_id]
         logger.info('Added {0} database'.format(
             cards.absolute_url_path()))
-    if 'solutions' not in app.objectIds():
+    if 'solution' not in app.objectIds():
         obj_id = ptypes.constructContent(
             'SolutionArticles',
             app,
-            'solutions',
+            'solution',
             title=u'Solution Articles',
         )
-        solutions = portal[obj_id]
+        solutions = app[obj_id]
         logger.info('Added {0} database'.format(
             solutions.absolute_url_path()))
 

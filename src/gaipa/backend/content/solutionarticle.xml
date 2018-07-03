@@ -5,5 +5,13 @@
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     i18n:domain="gaipa.backend">
     <schema>
+      <field name="solution_category" type="zope.schema.Choice">
+        <title>Solution Category</title>
+        <description>Used for showing related Solution Services</description>
+        <vocabulary>plone.app.vocabularies.PortalTypes</vocabulary>
+        <default></default>
+        <required>False</required>
+        <readonly>False</readonly>
+      </field>
     </schema>
 </model>
