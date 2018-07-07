@@ -8,9 +8,9 @@
       <field name="solution_category" type="zope.schema.Choice">
         <title>Solution Category</title>
         <description>Used for showing related Solution Services</description>
-        <vocabulary>plone.app.vocabularies.PortalTypes</vocabulary>
+        <vocabulary>collective.taxonomy.availableservicecategories</vocabulary>
         <default></default>
-        <required>False</required>
+        <required>True</required>
         <readonly>False</readonly>
       </field>
     </schema>
