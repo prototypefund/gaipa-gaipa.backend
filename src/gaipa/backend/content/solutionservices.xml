@@ -5,5 +5,20 @@
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     i18n:domain="gaipa.backend">
     <schema>
+      <field name="solution_category" type="zope.schema.Choice">
+        <title>Solution Category</title>
+        <description>Used for showing related Solution Services</description>
+        <vocabulary>collective.taxonomy.availableservicecategories</vocabulary>
+        <default></default>
+        <required>True</required>
+        <readonly>False</readonly>
+      </field>
+      <field name="url" type="zope.schema.TextLine">
+        <title>URL</title>
+        <description>External URL of the Services</description>
+        <required>False</required>
+        <default></default>
+        <readonly>False</readonly>
+      </field>
     </schema>
 </model>
