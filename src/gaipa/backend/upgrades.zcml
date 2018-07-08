@@ -21,6 +21,15 @@
     handler=".upgrades.reload_gs_profile"
     />
 
+  <genericsetup:upgradeStep
+    source="1002"
+    destination="1003"
+    title="Reload GS profiles, to install solution_index"
+    description=""
+    profile="gaipa.backend:default"
+    handler=".upgrades.reload_gs_profile"
+    />
+
 
 
 </configure>
