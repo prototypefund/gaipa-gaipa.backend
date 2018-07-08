@@ -43,7 +43,7 @@
       />
 
   <plone:CORSPolicy
-    allow_origin="http://localhost:4300,http://127.0.0.1:4300,http://localhost:3000,http://127.0.0.1:3000,http://app.gaipa.lan"
+    allow_origin="http://localhost:4300,http://127.0.0.1:4300,http://localhost:3000,http://127.0.0.1:3000,http://app.gaipa.lan,http://app.gaipa.org,https://app.gaipa.org"
     allow_methods="DELETE,GET,OPTIONS,PATCH,POST,PUT"
     allow_credentials="true"
     layer="gaipa.backend.interfaces.IGaipaBackendLayer"
