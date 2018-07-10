@@ -54,6 +54,6 @@
 
   <!-- -*- extra stuff goes here -*- -->
 
-
+  <adapter factory=".restapi.ChoiceFieldSerializer" />
 
 </configure>
