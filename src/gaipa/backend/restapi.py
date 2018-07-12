@@ -22,21 +22,25 @@ class ChoiceFieldSerializer(object):
         return json_compatible(self.get_value())
 
     def get_value(self, default=None):
+        vocab_value = {
+            'token': None,
+            'title': None,
+        }
         value = getattr(
             self.field.interface(self.context),
             self.field.__name__,
             default,
         )
         if not value:
-            return value
+            return
+        vocab_value['token'] = value
         factory = getUtility(IVocabularyFactory, self.field.vocabularyName)
         if not factory:
-            return value
+            return vocab_value
         # collective.taxonomy:
         if hasattr(factory, 'translate'):
-            value = factory.translate(value, context=self.context)
+            vocab_value['title'] = factory.translate(value, context=self.context)
         elif IVocabularyFactory.providedBy(factory):
             vocab = factory(self.context)
-            value = vocab.getTermByToken(value).title
-
-        return value
+            vocab_value['title'] = vocab.getTermByToken(value).title
+        return vocab_value
