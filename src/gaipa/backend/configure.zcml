@@ -56,4 +56,11 @@
 
   <adapter factory=".restapi.ChoiceFieldSerializer" />
 
+  <subscriber
+    for="gaipa.backend.content.solutionprovider.ISolutionprovider
+         zope.lifecycleevent.interfaces.IObjectAddedEvent
+        "
+    handler=".subscribers.create_service_and_solution_containers"
+    />
+
 </configure>

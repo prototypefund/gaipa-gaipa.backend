@@ -57,19 +57,19 @@ def post_install(context):
         solutions = app[obj_id]
         logger.info('Added {0} database'.format(
             solutions.absolute_url_path()))
-    if 'service' not in app.objectIds():
-        obj_id = ptypes.constructContent(
-            'SolutionServices',
-            app,
-            'service',
-            title=u'Solution Services',
-        )
-        service = app[obj_id]
-        logger.info('Added {0} database'.format(
-            service.absolute_url_path()))
+    # if 'service' not in app.objectIds():
+    #     obj_id = ptypes.constructContent(
+    #         'SolutionServices',
+    #         app,
+    #         'service',
+    #         title=u'Solution Services',
+    #     )
+    #     service = app[obj_id]
+    #     logger.info('Added {0} database'.format(
+    #         service.absolute_url_path()))
     if 'provider' not in app.objectIds():
         obj_id = ptypes.constructContent(
-            'SolutionProvider',
+            'SolutionProviders',
             app,
             'provider',
             title=u'Solution Provider',
