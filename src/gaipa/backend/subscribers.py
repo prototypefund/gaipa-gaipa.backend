@@ -4,7 +4,7 @@ from plone import api
 import logging
 
 
-logger = logging.getLogger("gaipa.backend.subscribers")
+logger = logging.getLogger('gaipa.backend.subscribers')
 
 
 def create_service_and_solution_containers(obj, event):
@@ -13,7 +13,6 @@ def create_service_and_solution_containers(obj, event):
     portal = api.portal.get()
     ptypes = portal.portal_types
 
-    import pdb;pdb.set_trace()
     if 'service' not in obj.objectIds():
         obj_id = ptypes.constructContent(
             'SolutionServices',
@@ -40,4 +39,3 @@ def create_service_and_solution_containers(obj, event):
             obj.absolute_url_path(),
             )
         )
-

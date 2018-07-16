@@ -1,12 +1,14 @@
+# -*- coding: utf-8 -*-
+
 from plone.dexterity.interfaces import IDexterityContent
 from plone.restapi.interfaces import IFieldSerializer
 from plone.restapi.serializer.converters import json_compatible
 from zope.component import adapter
+from zope.component import getUtility
 from zope.interface import implementer
 from zope.interface import Interface
 from zope.schema.interfaces import IChoice
 from zope.schema.interfaces import IVocabularyFactory
-from zope.component import getUtility
 
 
 @adapter(IChoice, IDexterityContent, Interface)
@@ -39,7 +41,10 @@ class ChoiceFieldSerializer(object):
             return vocab_value
         # collective.taxonomy:
         if hasattr(factory, 'translate'):
-            vocab_value['title'] = factory.translate(value, context=self.context)
+            vocab_value['title'] = factory.translate(
+                value,
+                context=self.context,
+            )
         elif IVocabularyFactory.providedBy(factory):
             vocab = factory(self.context)
             vocab_value['title'] = vocab.getTermByToken(value).title
