@@ -21,6 +21,7 @@ def create_service_and_solution_containers(obj, event):
             title=u'Solution Services',
         )
         service = obj[obj_id]
+        api.content.transition(obj=service, transition='publish')
         logger.info('Added {0} container to SolutionProvider: {1}'.format(
             service.id,
             obj.absolute_url_path(),
@@ -34,6 +35,7 @@ def create_service_and_solution_containers(obj, event):
             title=u'Solution Articles',
         )
         solution = obj[obj_id]
+        api.content.transition(obj=solution, transition='publish')
         logger.info('Added {0} container to SolutionProvider: {1}'.format(
             solution.id,
             obj.absolute_url_path(),
