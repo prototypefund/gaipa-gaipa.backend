@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from gaipa.backend import _
 from gaipa.backend.testing import GAIPA_BACKEND_INTEGRATION_TESTING  # noqa
 from plone import api
 from plone.app.testing import setRoles

@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-# from plone import api
-from gaipa.backend import _
 from plone import api
 from plone.dexterity.interfaces import IDexterityContent
 from zope.globalrequest import getRequest
@@ -23,7 +21,7 @@ class CropCategories(object):
     """
 
     def __call__(self, context):
-        crop_brains = api.content.find(portal_type="Crop")
+        crop_brains = api.content.find(portal_type='Crop')
         items = []
         for brain in crop_brains:
             items.append(VocabItem(brain.getPath(), brain.Title))

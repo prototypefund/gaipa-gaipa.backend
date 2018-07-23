@@ -7,10 +7,10 @@ from plone.app.testing import IntegrationTesting
 from plone.app.testing import PloneSandboxLayer
 from plone.testing import z2
 
+import collective.taxonomy
 import gaipa.backend
 import plone.rest
 import plone.restapi
-import collective.taxonomy
 
 
 class GaipaBackendLayer(PloneSandboxLayer):
