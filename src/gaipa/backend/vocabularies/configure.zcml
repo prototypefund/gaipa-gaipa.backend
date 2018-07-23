@@ -1,0 +1,13 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="gaipa.backend">
+
+    <!-- -*- extra stuff goes here -*- -->
+
+    <utility
+        component=".crop_categories.CropCategoriesFactory"
+        name="gaipa.backend.CropCategories"
+    />
+
+        
+</configure>

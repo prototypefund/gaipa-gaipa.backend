@@ -54,6 +54,9 @@
 
   <!-- -*- extra stuff goes here -*- -->
 
+    <include package=".vocabularies" />
+
+        
   <adapter factory=".restapi.ChoiceFieldSerializer" />
 
   <subscriber
