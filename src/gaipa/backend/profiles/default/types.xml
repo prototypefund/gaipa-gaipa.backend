@@ -11,4 +11,5 @@
   <object meta_type="Dexterity FTI" name="SolutionProvider"/>
   <object meta_type="Dexterity FTI" name="SolutionServices"/>
   <object meta_type="Dexterity FTI" name="Solution Service"/>
+  <object meta_type="Dexterity FTI" name="CropContainer"/>
 </object>

@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="gaipa.backend.AddCropContainer"
+        title="gaipa.backend: Add CropContainer"
+    />
+
+        
+    <permission
         id="gaipa.backend.AddSolutionService"
         title="gaipa.backend: Add SolutionService"
     />
