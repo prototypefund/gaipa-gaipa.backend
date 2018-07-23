@@ -10,7 +10,15 @@
         <description>Used for showing related Solution Services</description>
         <vocabulary>collective.taxonomy.availableservicecategories</vocabulary>
         <default></default>
-        <required>True</required>
+        <required>False</required>
+        <readonly>False</readonly>
+      </field>
+      <field name="crop_category" type="zope.schema.Choice">
+        <title>Crop Category</title>
+        <description></description>
+        <vocabulary>gaipa.backend.CropCategories</vocabulary>
+        <default></default>
+        <required>False</required>
         <readonly>False</readonly>
       </field>
     </schema>
