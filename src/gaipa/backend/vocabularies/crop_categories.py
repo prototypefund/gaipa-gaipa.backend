@@ -21,7 +21,10 @@ class CropCategories(object):
     """
 
     def __call__(self, context):
-        crop_brains = api.content.find(portal_type='Crop')
+        crop_brains = api.content.find(
+            portal_type='Crop',
+            sort_on='sortable_title',
+        )
         items = []
         for brain in crop_brains:
             items.append(VocabItem(brain.getPath(), brain.Title))
