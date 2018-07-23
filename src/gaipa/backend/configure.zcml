@@ -3,9 +3,12 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
     i18n_domain="gaipa.backend">
 
   <i18n:registerTranslations directory="locales" />
+
+  <include package="plone.rest" file="meta.zcml"/>
 
   <!--
     Be careful if you use general includeDependencies, it can have sideffects!
@@ -43,6 +46,7 @@
       />
 
   <plone:CORSPolicy
+    zcml:condition="installed plone.rest"
     allow_origin="http://localhost:4300,http://127.0.0.1:4300,http://localhost:3000,http://127.0.0.1:3000,http://app.gaipa.lan,http://app.gaipa.org,https://app.gaipa.org"
     allow_methods="DELETE,GET,OPTIONS,PATCH,POST,PUT"
     allow_credentials="true"
@@ -54,9 +58,9 @@
 
   <!-- -*- extra stuff goes here -*- -->
 
-    <include package=".vocabularies" />
+  <include package=".vocabularies" />
 
-        
+
   <adapter factory=".restapi.ChoiceFieldSerializer" />
 
   <subscriber

@@ -57,16 +57,16 @@ def post_install(context):
         solutions = app[obj_id]
         logger.info('Added {0} database'.format(
             solutions.absolute_url_path()))
-    # if 'service' not in app.objectIds():
-    #     obj_id = ptypes.constructContent(
-    #         'SolutionServices',
-    #         app,
-    #         'service',
-    #         title=u'Solution Services',
-    #     )
-    #     service = app[obj_id]
-    #     logger.info('Added {0} database'.format(
-    #         service.absolute_url_path()))
+    if 'crop' not in app.objectIds():
+        obj_id = ptypes.constructContent(
+            'CropContainer',
+            app,
+            'crop',
+            title=u'Crop Container',
+        )
+        crop = app[obj_id]
+        logger.info('Added {0} database'.format(
+            crop.absolute_url_path()))
     if 'provider' not in app.objectIds():
         obj_id = ptypes.constructContent(
             'SolutionProviders',
@@ -80,6 +80,7 @@ def post_install(context):
 
     wanted_indexes = (
         ('solution_category', 'FieldIndex'),
+        ('crop_category', 'FieldIndex'),
     )
     add_catalog_indexes(context, logger=logger, wanted=wanted_indexes)
 

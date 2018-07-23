@@ -42,6 +42,7 @@ setup(
         # -*- Extra requirements: -*-
         'plone.app.dexterity',
         'plone.api>=1.8.4',
+        'plone.rest',
         'plone.restapi',
         'Products.GenericSetup>=1.8.2',
         'setuptools',

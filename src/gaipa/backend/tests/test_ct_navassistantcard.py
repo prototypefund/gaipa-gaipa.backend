@@ -38,8 +38,8 @@ class NavassistantcardIntegrationTest(unittest.TestCase):
     def test_ct_navassistantcard_schema(self):
         fti = queryUtility(IDexterityFTI, name='NavAssistantCard')
         schema = fti.lookupSchema()
-        schema_name = portalTypeToSchemaName('NavAssistantCard')
-        self.assertEqual(schema_name, schema.getName())
+        # schema_name = portalTypeToSchemaName('NavAssistantCard')
+        self.assertEqual('INavassistantcard', schema.getName())
 
     def test_ct_navassistantcard_fti(self):
         fti = queryUtility(IDexterityFTI, name='NavAssistantCard')

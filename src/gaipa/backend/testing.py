@@ -8,6 +8,9 @@ from plone.app.testing import PloneSandboxLayer
 from plone.testing import z2
 
 import gaipa.backend
+import plone.rest
+import plone.restapi
+import collective.taxonomy
 
 
 class GaipaBackendLayer(PloneSandboxLayer):
@@ -19,6 +22,9 @@ class GaipaBackendLayer(PloneSandboxLayer):
         # The z3c.autoinclude feature is disabled in the Plone fixture base
         # layer.
         self.loadZCML(package=gaipa.backend)
+        self.loadZCML(package=plone.rest)
+        self.loadZCML(package=plone.restapi)
+        self.loadZCML(package=collective.taxonomy)
 
     def setUpPloneSite(self, portal):
         applyProfile(portal, 'gaipa.backend:default')

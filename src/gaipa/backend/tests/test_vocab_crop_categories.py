@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from gaipa.backend import _
 from gaipa.backend.testing import GAIPA_BACKEND_INTEGRATION_TESTING  # noqa
+from plone import api
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from zope.component import getUtility
@@ -18,6 +19,18 @@ class CropCategoriesIntegrationTest(unittest.TestCase):
         """Custom shared utility setup for tests."""
         self.portal = self.layer['portal']
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
+        self.mycrop = api.content.create(
+            type='Crop',
+            container=self.portal.app.crop,
+            id='my-crop',
+            title='My Crop',
+        )
+        api.content.create(
+            type='Crop',
+            container=self.portal.app.crop,
+            id='tomato',
+            title='Tomato',
+        )
 
     def test_vocab_crop_categories(self):
         vocab_name = 'gaipa.backend.CropCategories'
@@ -27,6 +40,6 @@ class CropCategoriesIntegrationTest(unittest.TestCase):
         vocabulary = factory(self.portal)
         self.assertTrue(IVocabularyTokenized.providedBy(vocabulary))
         self.assertEqual(
-            vocabulary.getTerm('sony-a7r-iii').title,
-            _(u'Sony Aplha 7R III'),
+            vocabulary.getTerm(self.mycrop.absolute_url_path()).title,
+            u'My Crop',
         )

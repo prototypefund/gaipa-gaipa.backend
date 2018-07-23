@@ -58,7 +58,7 @@ class SolutionproviderIntegrationTest(unittest.TestCase):
         )
 
     def test_ct_solutionprovider_adding(self):
-        setRoles(self.portal, TEST_USER_ID, ['Contributor'])
+        setRoles(self.portal, TEST_USER_ID, ['Manager'])
         obj = api.content.create(
             container=self.parent,
             type='SolutionProvider',

@@ -2,6 +2,7 @@
 
 # from plone import api
 from gaipa.backend import _
+from plone import api
 from plone.dexterity.interfaces import IDexterityContent
 from zope.globalrequest import getRequest
 from zope.interface import implementer
@@ -22,12 +23,10 @@ class CropCategories(object):
     """
 
     def __call__(self, context):
-        # Just an example list of content for our vocabulary,
-        # this can be any static or dynamic data, a catalog result for example.
-        items = [
-            VocabItem(u'sony-a7r-iii', _(u'Sony Aplha 7R III')),
-            VocabItem(u'canon-5d-iv', _(u'Canon 5D IV')),
-        ]
+        crop_brains = api.content.find(portal_type="Crop")
+        items = []
+        for brain in crop_brains:
+            items.append(VocabItem(brain.getPath(), brain.Title))
 
         # Fix context if you are using the vocabulary in DataGridField.
         # See https://github.com/collective/collective.z3cform.datagridfield/issues/31:  # NOQA: 501
