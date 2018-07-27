@@ -6,67 +6,57 @@
 gaipa.backend
 =============
 
-Tell me what your product does
+Setup Plone backend
+===================
 
-Features
---------
+Required package on the maschine on Ubuntu/Debian:
+--------------------------------------------------
 
-- Can be bullet points
+- python-dev
+- python-virtualenv
+- poppler-utils
+- libjpeg-dev
+- libxslt1-dev
 
-
-Examples
---------
-
-This add-on can be seen in action at the following sites:
-- Is there a page on the internet where everybody can see the features?
-
-
-Documentation
+Install Plone
 -------------
 
-Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
+.. code-block:: sh
+
+    git clone git@gitlab.com:gaipa/gaipa.backend.git
+    cd gaipa.backend
+    virtualenv .
+    ./bin/pip install -r requirements.txt
+    ./bin/buildout
 
 
-Translations
-------------
+To start Plone in debug mode
+----------------------------
 
-This product has been translated into
+.. code-block:: sh
 
-- Klingon (thanks, K'Plai)
-
-
-Installation
-------------
-
-Install gaipa.backend by adding it to your buildout::
-
-    [buildout]
-
-    ...
-
-    eggs =
-        gaipa.backend
+    ./bin/instance fg
 
 
-and then running ``bin/buildout``
+To start Plone in daemon mode
+-----------------------------
+
+.. code-block:: sh
+
+    ./bin/instance start
 
 
-Contribute
-----------
+Open Plone in Browser on
+------------------------
 
-- Issue Tracker: https://github.com/collective/gaipa.backend/issues
-- Source Code: https://github.com/collective/gaipa.backend
-- Documentation: https://docs.plone.org/foo/bar
+http://localhost:7080/
 
+User: admin
+Password: admin
 
-Support
--------
+Add a Plone site, keep defaul site ID.
+Go to site setup and there to addons and install the gaipa.backend addon.
 
-If you are having issues, please let us know.
-We have a mailing list located at: project@example.com
+http://localhost:7080/Plone/@@prefs_install_products_form
 
-
-License
--------
-
-The project is licensed under the GPLv2.
+Now create the needed gaipa content inside the app folder.
