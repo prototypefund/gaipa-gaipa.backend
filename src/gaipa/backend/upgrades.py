@@ -26,7 +26,6 @@ def upgrade_category_indexes(context):
     for name, meta_type in wanted:
         if name not in indexes:
             continue
-        import pdb; pdb.set_trace()
         for idx in catalog.index_objects():
             if not idx.id == name:
                 continue
