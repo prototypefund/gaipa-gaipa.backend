@@ -39,6 +39,15 @@
     handler=".upgrades.reload_gs_profile"
     />
 
+  <genericsetup:upgradeStep
+    source="1004"
+    destination="1005"
+    title="Upgrade categoru indexes"
+    description=""
+    profile="gaipa.backend:default"
+    handler=".upgrades.upgrade_category_indexes"
+    />
+
 
 
 </configure>

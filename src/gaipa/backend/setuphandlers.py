@@ -79,8 +79,8 @@ def post_install(context):
             provider.absolute_url_path()))
 
     wanted_indexes = (
-        ('solution_category', 'FieldIndex'),
-        ('crop_category', 'FieldIndex'),
+        ('solution_category', 'KeywordIndex'),
+        ('crop_category', 'KeywordIndex'),
     )
     add_catalog_indexes(context, logger=logger, wanted=wanted_indexes)
 

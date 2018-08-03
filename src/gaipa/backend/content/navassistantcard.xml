@@ -6,7 +6,7 @@
     i18n:domain="gaipa.backend">
     <schema>
       <field name="solution_category" type="zope.schema.Set">
-        <title>Solution Category</title>
+        <title>Solution Categories</title>
         <description>Used for showing related solution Services</description>
         <value_type type="zope.schema.Choice">
           <vocabulary>collective.taxonomy.availableservicecategories</vocabulary>
