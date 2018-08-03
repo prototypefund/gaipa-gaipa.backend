@@ -5,13 +5,23 @@
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     i18n:domain="gaipa.backend">
     <schema>
-    <field name="solutions" type="z3c.relationfield.schema.RelationList">
-      <title>Solutions</title>
-      <value_type type="z3c.relationfield.schema.RelationChoice">
-        <title>Solution</title>
-      </value_type>
-      <required>False</required>
-      <readonly>False</readonly>
-    </field>
+      <field name="solution_category" type="zope.schema.Set">
+        <title>Solution Category</title>
+        <description>Used for showing related solution Services</description>
+        <value_type type="zope.schema.Choice">
+          <vocabulary>collective.taxonomy.availableservicecategories</vocabulary>
+        </value_type>
+        <required>True</required>
+        <readonly>False</readonly>
+      </field>
+      <field name="solutions" type="z3c.relationfield.schema.RelationList">
+        <title>Solutions</title>
+        <description>DEPRECATED, use Solution Category to link Solution Articles</description>
+        <value_type type="z3c.relationfield.schema.RelationChoice">
+          <title>Solution</title>
+        </value_type>
+        <required>False</required>
+        <readonly>False</readonly>
+      </field>
     </schema>
 </model>

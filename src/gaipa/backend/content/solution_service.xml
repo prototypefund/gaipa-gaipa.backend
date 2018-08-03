@@ -5,11 +5,12 @@
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     i18n:domain="gaipa.backend">
     <schema>
-      <field name="solution_category" type="zope.schema.Choice">
+      <field name="solution_category" type="zope.schema.Set">
         <title>Solution Category</title>
-        <description>Used for showing related Solution Services</description>
-        <vocabulary>collective.taxonomy.availableservicecategories</vocabulary>
-        <default></default>
+        <description>Used for showing related solution Services</description>
+        <value_type type="zope.schema.Choice">
+          <vocabulary>collective.taxonomy.availableservicecategories</vocabulary>
+        </value_type>
         <required>True</required>
         <readonly>False</readonly>
       </field>
