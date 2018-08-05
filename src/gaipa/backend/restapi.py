@@ -8,12 +8,56 @@ from zope.component import getUtility
 from zope.interface import implementer
 from zope.interface import Interface
 from zope.schema.interfaces import IChoice
+from zope.schema.interfaces import ICollection
 from zope.schema.interfaces import IVocabularyFactory
 
+import six
 
-@adapter(IChoice, IDexterityContent, Interface)
-@implementer(IFieldSerializer)
-class ChoiceFieldSerializer(object):
+
+def _get_vocab_term(context, field, value):
+    """ Get vocab term dict
+        returns: {'token': token, 'title': title}
+    """
+    vocab_term = {
+        'token': None,
+        'title': None,
+    }
+    vocab_term['token'] = value
+    factory = getUtility(IVocabularyFactory, field)
+    if not factory:
+        return vocab_term
+
+    # collective.taxonomy support:
+    if hasattr(factory, 'translate'):
+        vocab_term['title'] = _get_taxonomy_vocab_title(
+            context,
+            factory,
+            value,
+        )
+    elif IVocabularyFactory.providedBy(factory):
+        vocab_term['title'] = _get_vocab_title(
+            context,
+            factory,
+            value,
+        )
+    return vocab_term
+
+
+def _get_taxonomy_vocab_title(context, factory, value):
+        vocab_title = factory.translate(
+            value,
+            context=context,
+        )
+        return vocab_title
+
+
+def _get_vocab_title(context, factory, value):
+    vocab = factory(context)
+    vocab_title = vocab.getTermByToken(value).title
+    return vocab_title
+
+
+class BaseFieldSerializer(object):
 
     def __init__(self, field, context, request):
         self.context = context
@@ -23,11 +67,13 @@ class ChoiceFieldSerializer(object):
     def __call__(self):
         return json_compatible(self.get_value())
 
+
+@adapter(IChoice, IDexterityContent, Interface)
+@implementer(IFieldSerializer)
+class ChoiceFieldSerializer(BaseFieldSerializer):
+    """
+    """
     def get_value(self, default=None):
-        vocab_value = {
-            'token': None,
-            'title': None,
-        }
         value = getattr(
             self.field.interface(self.context),
             self.field.__name__,
@@ -35,17 +81,38 @@ class ChoiceFieldSerializer(object):
         )
         if not value:
             return
-        vocab_value['token'] = value
-        factory = getUtility(IVocabularyFactory, self.field.vocabularyName)
-        if not factory:
-            return vocab_value
-        # collective.taxonomy:
-        if hasattr(factory, 'translate'):
-            vocab_value['title'] = factory.translate(
+
+        term = _get_vocab_term(
+            self.context,
+            self.field.vocabularyName,
+            value,
+        )
+        return term
+
+
+@adapter(ICollection, IDexterityContent, Interface)
+@implementer(IFieldSerializer)
+class CollectionFieldSerializer(BaseFieldSerializer):
+    """
+    """
+    def get_value(self, default=None):
+        terms = []
+        values = getattr(
+            self.field.interface(self.context),
+            self.field.__name__,
+            default,
+        )
+        if not values:
+            return
+        if not IChoice.providedBy(self.field.value_type):
+            return
+
+        import pdb; pdb.set_trace()
+        for value in values:
+            term = _get_vocab_term(
+                self.context,
+                self.field.value_type.vocabularyName,
                 value,
-                context=self.context,
             )
-        elif IVocabularyFactory.providedBy(factory):
-            vocab = factory(self.context)
-            vocab_value['title'] = vocab.getTermByToken(value).title
-        return vocab_value
+            terms.append(term)
+        return terms

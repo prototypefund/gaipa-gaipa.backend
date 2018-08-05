@@ -34,3 +34,5 @@ report.html
 !.gitkeep
 !.travis.yml
 !src/gaipa
+/share
+/fix_default_page.py
