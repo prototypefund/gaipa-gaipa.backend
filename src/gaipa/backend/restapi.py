@@ -107,7 +107,6 @@ class CollectionFieldSerializer(BaseFieldSerializer):
         if not IChoice.providedBy(self.field.value_type):
             return
 
-        import pdb; pdb.set_trace()
         for value in values:
             term = _get_vocab_term(
                 self.context,
