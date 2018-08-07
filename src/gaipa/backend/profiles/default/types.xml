@@ -16,4 +16,5 @@
   <object meta_type="Dexterity FTI" name="Chapter"/>
   <object meta_type="Dexterity FTI" name="Pests"/>
   <object meta_type="Dexterity FTI" name="Pest"/>
+  <object meta_type="Dexterity FTI" name="Diseases"/>
 </object>
