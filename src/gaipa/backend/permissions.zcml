@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="gaipa.backend.AddPests"
+        title="gaipa.backend: Add Pests"
+    />
+
+        
+    <permission
         id="gaipa.backend.AddChapter"
         title="gaipa.backend: Add Chapter"
     />

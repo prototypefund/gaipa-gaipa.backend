@@ -14,4 +14,5 @@
   <object meta_type="Dexterity FTI" name="CropContainer"/>
   <object meta_type="Dexterity FTI" name="Crop"/>
   <object meta_type="Dexterity FTI" name="Chapter"/>
+  <object meta_type="Dexterity FTI" name="Pests"/>
 </object>
