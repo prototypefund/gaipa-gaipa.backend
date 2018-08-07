@@ -1,36 +1,35 @@
 <?xml version="1.0"?>
 <object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-    name="Pests"
+    name="Pest"
     meta_type="Dexterity FTI"
     i18n:domain="gaipa.backend">
 
   <!-- Basic properties -->
   <property
       i18n:translate=""
-      name="title">Pests</property>
+      name="title">Pest</property>
   <property
       i18n:translate=""
-      name="description">Container for Pest objects.</property>
+      name="description"></property>
 
   <property name="allow_discussion">False</property>
-  <property name="factory">Pests</property>
+  <property name="factory">Pest</property>
   <property name="icon_expr"></property>
   <property name="link_target"></property>
 
   <!-- Hierarchy control -->
-  <property name="global_allow">True</property>
+  <property name="global_allow">False</property>
   <property name="filter_content_types">True</property>
   <property name="allowed_content_types">
-    <element value="Pest" />
-          <!--
+  <!--
     <element value="Document" />
     <element value="File" />
   -->
   </property>
   <!-- Schema, class and security -->
-  <property name="add_permission">gaipa.backend.AddPests</property>
-  <property name="klass">gaipa.backend.content.pests.Pests</property>
-  <property name="model_file">gaipa.backend.content:pests.xml</property>
+  <property name="add_permission">gaipa.backend.AddPest</property>
+  <property name="klass">gaipa.backend.content.pest.Pest</property>
+  <property name="model_file">gaipa.backend.content:pest.xml</property>
   <property name="model_source"></property>
   <property name="schema"></property>
 
@@ -54,7 +53,7 @@
   </property>
 
   <!-- View information -->
-  <property name="add_view_expr">string:${folder_url}/++add++Pests</property>
+  <property name="add_view_expr">string:${folder_url}/++add++Pest</property>
   <property name="default_view">view</property>
   <property name="default_view_fallback">False</property>
   <property name="immediate_view">view</property>

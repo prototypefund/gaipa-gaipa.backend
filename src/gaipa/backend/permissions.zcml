@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="gaipa.backend.AddPest"
+        title="gaipa.backend: Add Pest"
+    />
+
+        
+    <permission
         id="gaipa.backend.AddPests"
         title="gaipa.backend: Add Pests"
     />
