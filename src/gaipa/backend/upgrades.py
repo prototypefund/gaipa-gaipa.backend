@@ -32,7 +32,11 @@ def upgrade_category_indexes(context):
             if idx.meta_type == meta_type:
                 continue
             catalog.delIndex(name)
-            logger.info('Deleted old %s index for field %s.', idx.meta_type, name)
+            logger.info(
+                'Deleted old %s index for field %s.',
+                idx.meta_type,
+                name,
+            )
             catalog.addIndex(name, meta_type)
             indexables.append(name)
             logger.info('Added %s for field %s.', meta_type, name)
