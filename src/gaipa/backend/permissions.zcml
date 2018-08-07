@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="gaipa.backend.AddChapter"
+        title="gaipa.backend: Add Chapter"
+    />
+
+        
+    <permission
         id="gaipa.backend.AddCrop"
         title="gaipa.backend: Add Crop"
     />
