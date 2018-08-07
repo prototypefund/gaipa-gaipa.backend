@@ -16,6 +16,7 @@
   -->
   <!--<includeDependencies package="." />-->
 
+  <include package=".api" />
   <include package=".browser" />
 
   <include file="permissions.zcml" />
@@ -59,9 +60,6 @@
   <!-- -*- extra stuff goes here -*- -->
 
   <include package=".vocabularies" />
-
-  <adapter factory=".restapi.ChoiceFieldSerializer" />
-  <adapter factory=".restapi.CollectionFieldSerializer" />
 
   <subscriber
     for="gaipa.backend.content.solutionprovider.ISolutionprovider
