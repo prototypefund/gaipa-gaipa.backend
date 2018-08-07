@@ -11,8 +11,6 @@ from zope.schema.interfaces import IChoice
 from zope.schema.interfaces import ICollection
 from zope.schema.interfaces import IVocabularyFactory
 
-import six
-
 
 def _get_vocab_term(context, field, value):
     """ Get vocab term dict
