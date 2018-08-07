@@ -48,6 +48,15 @@
     handler=".upgrades.upgrade_category_indexes"
     />
 
+  <genericsetup:upgradeStep
+    source="1005"
+    destination="1006"
+    title="Reload GS profiles, to install Disease and Pest container"
+    description=""
+    profile="gaipa.backend:default"
+    handler=".upgrades.reload_gs_profile"
+    />
+
 
 
 </configure>

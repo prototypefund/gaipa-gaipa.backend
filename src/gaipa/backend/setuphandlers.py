@@ -67,6 +67,26 @@ def post_install(context):
         crop = app[obj_id]
         logger.info('Added {0} database'.format(
             crop.absolute_url_path()))
+    if 'pest' not in app.objectIds():
+        obj_id = ptypes.constructContent(
+            'Pests',
+            app,
+            'pest',
+            title=u'Pests',
+        )
+        pest = app[obj_id]
+        logger.info('Added {0} database'.format(
+            pest.absolute_url_path()))
+    if 'disease' not in app.objectIds():
+        obj_id = ptypes.constructContent(
+            'Diseases',
+            app,
+            'disease',
+            title=u'Diseases',
+        )
+        disease = app[obj_id]
+        logger.info('Added {0} database'.format(
+            disease.absolute_url_path()))
     if 'provider' not in app.objectIds():
         obj_id = ptypes.constructContent(
             'SolutionProviders',

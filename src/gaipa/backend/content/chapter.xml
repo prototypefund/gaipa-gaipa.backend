@@ -4,6 +4,15 @@
     xmlns:form="http://namespaces.plone.org/supermodel/form"
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     i18n:domain="gaipa.backend">
-    <schema>
-    </schema>
+  <schema>
+    <field name="solution_category" type="zope.schema.Set">
+      <title>Solution Categories</title>
+      <description>Used for linking related Cards and Services.</description>
+      <value_type type="zope.schema.Choice">
+        <vocabulary>collective.taxonomy.availableservicecategories</vocabulary>
+      </value_type>
+      <required>False</required>
+      <readonly>False</readonly>
+    </field>
+  </schema>
 </model>
