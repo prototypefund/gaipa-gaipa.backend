@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
+from base import BaseFieldSerializer
 from plone.dexterity.interfaces import IDexterityContent
 from plone.restapi.interfaces import IFieldSerializer
-from plone.restapi.serializer.converters import json_compatible
 from zope.component import adapter
 from zope.component import getUtility
 from zope.interface import implementer
@@ -53,17 +53,6 @@ def _get_vocab_title(context, factory, value):
     vocab = factory(context)
     vocab_title = vocab.getTermByToken(value).title
     return vocab_title
-
-
-class BaseFieldSerializer(object):
-
-    def __init__(self, field, context, request):
-        self.context = context
-        self.request = request
-        self.field = field
-
-    def __call__(self):
-        return json_compatible(self.get_value())
 
 
 @adapter(IChoice, IDexterityContent, Interface)
