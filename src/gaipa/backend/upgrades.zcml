@@ -57,6 +57,16 @@
     handler=".upgrades.reload_gs_profile"
     />
 
+  <genericsetup:upgradeStep
+    source="1006"
+    destination="1007"
+    title="Reload GS profiles, to update Chapter FTI settings"
+    description=""
+    profile="gaipa.backend:default"
+    handler=".upgrades.reload_gs_profile"
+    />
+
+
 
 
 </configure>
