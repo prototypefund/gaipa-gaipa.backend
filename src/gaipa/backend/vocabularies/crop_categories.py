@@ -27,7 +27,7 @@ class CropCategories(object):
         )
         items = []
         for brain in crop_brains:
-            items.append(VocabItem(brain.getPath(), brain.Title))
+            items.append(VocabItem(brain.id, brain.Title))
 
         # Fix context if you are using the vocabulary in DataGridField.
         # See https://github.com/collective/collective.z3cform.datagridfield/issues/31:  # NOQA: 501

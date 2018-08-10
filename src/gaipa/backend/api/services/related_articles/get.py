@@ -12,7 +12,7 @@ from zope.interface import implementer
 class RelatedArticles(object):
 
     def __init__(self, context, request):
-        self.context = context
+        self.context = context.aq_explicit
         self.request = request
 
     def __call__(self, expand=False):
@@ -26,14 +26,18 @@ class RelatedArticles(object):
         if not expand:
             return result
 
+        query = {}
+        query['portal_type'] = "Chapter"
         solution_categories = [c for c in self.context.solution_category]
-        article_brains = api.content.find(
-            portal_type="Chapter",
-            solution_category={
-                'query': solution_categories,
-                'operator': 'and',
-            }
-        )
+        if solution_categories:
+            query['solution_category'] = {
+                    'query': solution_categories,
+                    'operator': 'and',
+                }
+        crop_category = self.context.crop_category
+        if crop_category:
+            query['crop_category'] = crop_category
+        article_brains = api.content.find(**query)
         items = []
         for article in article_brains:
             items.append({
