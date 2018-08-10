@@ -18,6 +18,7 @@
 
   <include package=".api" />
   <include package=".browser" />
+  <include package=".indexers" />
 
   <include file="permissions.zcml" />
 
