@@ -40,9 +40,12 @@ class RelatedArticles(object):
         brains = api.content.find(**query)
         items = []
         for brain in brains:
+            obj = brain.getObject()
+            parent = obj.aq_inner.aq_parent
             items.append({
                 'title': brain.Title,
                 '@id': brain.getURL(),
+                'parentTitle': parent.title,
             })
 
         result['related-articles']['items'] = items
