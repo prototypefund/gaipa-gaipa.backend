@@ -26,14 +26,16 @@ class RelatedServices(object):
         if not expand:
             return result
 
+        query = {}
+        query['portal_type'] = "Solution Service"
         solution_categories = [c for c in self.context.solution_category]
-        brains = api.content.find(
-            portal_type="Solution Service",
-            solution_category={
+        if solution_categories:
+            query['solution_category'] = {
                 'query': solution_categories,
                 'operator': 'and',
             }
-        )
+        crop_category = self.context.crop_category
+        brains = api.content.find(**query)
         items = []
         for brain in brains:
             items.append({

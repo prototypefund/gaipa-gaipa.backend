@@ -31,18 +31,18 @@ class RelatedArticles(object):
         solution_categories = [c for c in self.context.solution_category]
         if solution_categories:
             query['solution_category'] = {
-                    'query': solution_categories,
-                    'operator': 'and',
-                }
+                'query': solution_categories,
+                'operator': 'and',
+            }
         crop_category = self.context.crop_category
         if crop_category:
             query['crop_category'] = crop_category
-        article_brains = api.content.find(**query)
+        brains = api.content.find(**query)
         items = []
-        for article in article_brains:
+        for brain in brains:
             items.append({
-                'title': article.Title,
-                '@id': article.getURL(),
+                'title': brain.Title,
+                '@id': brain.getURL(),
             })
 
         result['related-articles']['items'] = items
