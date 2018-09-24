@@ -81,23 +81,21 @@
 -->
 
 <!-- Add custom Mosaic row format -->
-<!--
   <record name="plone.app.mosaic.default_available_actions">
     <value purge="False">
-      <element>grid-row-major-headline</element>
+      <element>grid-row-white-background</element>
     </value>
   </record>
 
   <records interface="plone.app.mosaic.interfaces.IFormat"
            prefix="plone.app.mosaic.formats.grid_row_major_headline">
-    <value key="name">grid-row-major-headline</value>
+    <value key="name">grid-row-white-background</value>
     <value key="category">row</value>
-    <value key="label">Major headline</value>
+    <value key="label">White background</value>
     <value key="action">row-toggle-class</value>
     <value key="icon">true</value>
     <value key="favorite">false</value>
     <value key="weight">100</value>
   </records>
--->
 
 </registry>

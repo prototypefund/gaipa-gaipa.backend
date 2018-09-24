@@ -1,0 +1,154 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2018-09-24 17:02+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: gaipa.backend\n"
+
+#: gaipa/backend/profiles/default/types/Chapter.xml
+msgid "An Solution Article Chapter."
+msgstr ""
+
+#: gaipa/backend/profiles/default/types/Chapter.xml
+msgid "Chapter"
+msgstr ""
+
+#: gaipa/backend/profiles/default/types/CropContainer.xml
+msgid "Container for Crop objects"
+msgstr ""
+
+#: gaipa/backend/profiles/default/types/Diseases.xml
+msgid "Container for Disease objects."
+msgstr ""
+
+#: gaipa/backend/profiles/default/types/Pests.xml
+msgid "Container for Pest objects."
+msgstr ""
+
+#: gaipa/backend/profiles/default/types/SolutionArticles.xml
+msgid "Container for Solution Articles"
+msgstr ""
+
+#: gaipa/backend/profiles/default/types/GaipaContent.xml
+msgid "Container for gaipa content"
+msgstr ""
+
+#: gaipa/backend/profiles/default/types/Solution_Service.xml
+msgid "Contains solution service information"
+msgstr ""
+
+#: gaipa/backend/profiles/default/types/Crop.xml
+msgid "Crop"
+msgstr ""
+
+#: gaipa/backend/profiles/default/types/CropContainer.xml
+msgid "CropContainer"
+msgstr ""
+
+#: gaipa/backend/profiles/default/types/Disease.xml
+msgid "Disease"
+msgstr ""
+
+#: gaipa/backend/profiles/default/types/Diseases.xml
+msgid "Diseases"
+msgstr ""
+
+#: gaipa/backend/profiles/default/types/Chapter.xml
+#: gaipa/backend/profiles/default/types/Crop.xml
+#: gaipa/backend/profiles/default/types/CropContainer.xml
+msgid "Edit"
+msgstr ""
+
+#: gaipa/backend/profiles/default/types/GaipaContent.xml
+msgid "GaipaContent"
+msgstr ""
+
+#: gaipa/backend/configure.zcml:34
+msgid "Installs the gaipa.backend add-on."
+msgstr ""
+
+#: gaipa/backend/profiles/default/types/NavAssistantCard.xml
+msgid "NavAssistantCard"
+msgstr ""
+
+#: gaipa/backend/profiles/default/types/NavAssistantCards.xml
+msgid "NavAssistantCards"
+msgstr ""
+
+#: gaipa/backend/profiles/default/types/NavAssistantCard.xml
+msgid "Navigation Assistant Card"
+msgstr ""
+
+#: gaipa/backend/profiles/default/types/Pest.xml
+msgid "Pest"
+msgstr ""
+
+#: gaipa/backend/profiles/default/types/Pests.xml
+msgid "Pests"
+msgstr ""
+
+#: gaipa/backend/profiles/default/types/SolutionArticle.xml
+msgid "Solution Article"
+msgstr ""
+
+#: gaipa/backend/profiles/default/types/Solution_Service.xml
+msgid "Solution Service"
+msgstr ""
+
+#: gaipa/backend/profiles/default/types/SolutionServices.xml
+msgid "Solution Service Containers"
+msgstr ""
+
+#: gaipa/backend/profiles/default/types/SolutionArticle.xml
+msgid "SolutionArticle"
+msgstr ""
+
+#: gaipa/backend/profiles/default/types/SolutionArticles.xml
+msgid "SolutionArticles"
+msgstr ""
+
+#: gaipa/backend/profiles/default/types/SolutionProvider.xml
+msgid "SolutionProvider"
+msgstr ""
+
+#: gaipa/backend/profiles/default/types/SolutionProviders.xml
+msgid "SolutionProviders"
+msgstr ""
+
+#: gaipa/backend/profiles/default/types/SolutionServices.xml
+msgid "SolutionServices"
+msgstr ""
+
+#: gaipa/backend/configure.zcml:43
+msgid "Uninstalls the gaipa.backend add-on."
+msgstr ""
+
+#: gaipa/backend/profiles/default/types/Chapter.xml
+#: gaipa/backend/profiles/default/types/Crop.xml
+#: gaipa/backend/profiles/default/types/CropContainer.xml
+msgid "View"
+msgstr ""
+
+#: gaipa/backend/profiles/default/types/NavAssistantCards.xml
+msgid "container Navigation Assistant Cards"
+msgstr ""
+
+#: gaipa/backend/configure.zcml:34
+msgid "gaipa.backend"
+msgstr ""
+
+#: gaipa/backend/configure.zcml:43
+msgid "gaipa.backend (uninstall)"
+msgstr ""
