@@ -6,6 +6,5 @@
     <dependency>profile-plone.restapi:default</dependency>
     <dependency>profile-plone.app.dexterity:default</dependency>
     <dependency>profile-collective.taxonomy:default</dependency>
-    <dependency>profile-plone.app.theming:default</dependency>
   </dependencies>
 </metadata>
