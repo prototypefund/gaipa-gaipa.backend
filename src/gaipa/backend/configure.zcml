@@ -60,6 +60,13 @@
 
   <!-- -*- extra stuff goes here -*- -->
 
+  <plone:static
+      directory="theme"
+      type="theme"
+      name="gaipa"
+      />
+
+
   <include package=".vocabularies" />
 
   <subscriber
