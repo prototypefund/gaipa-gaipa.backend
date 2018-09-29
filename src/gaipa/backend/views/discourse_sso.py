@@ -21,7 +21,7 @@ class DiscourseSso(BrowserView):
         digest = hash.hexdigest()
         verified = hmac.compare_digest(digest, sig)
         print("verified: {0}".format(verified))
-        decoded_sso = base64.b64encode(sso)
+        decoded_sso = base64.b64decode(sso)
         print("decoded_sso: {0}".format(decoded_sso))
         import pdb; pdb.set_trace()
 
