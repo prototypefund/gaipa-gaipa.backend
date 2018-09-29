@@ -16,8 +16,6 @@
   -->
   <!--<includeDependencies package="." />-->
 
-  <include package=".views" />
-
   <include package=".api" />
   <include package=".browser" />
   <include package=".indexers" />
