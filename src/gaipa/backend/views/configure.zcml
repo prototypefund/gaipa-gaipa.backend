@@ -8,11 +8,11 @@
 
   <browser:page
      name="discourse-sso"
-     for="Products.CMFCore.interfaces.IFolderish"
+     for="*"
      class=".discourse_sso.DiscourseSso"
      template="discourse_sso.pt"
      permission="zope2.View"
      />
-        
+
 
 </configure>

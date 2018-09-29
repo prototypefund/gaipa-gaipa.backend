@@ -11,5 +11,5 @@ class DiscourseSso(BrowserView):
     # template = ViewPageTemplateFile('discourse_sso.pt')
 
     def __call__(self):
-        self.msg = _(u'A small message')
+        print(self.request.__dict__)
         return self.index()
