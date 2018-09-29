@@ -18,8 +18,10 @@ class DiscourseSso(BrowserView):
             sso,
             hashlib.sha256,
         )
-        hmac_calculated = base64.b64encode(hash.digest())
-        verified = hmac.compare_digest(hmac_calculated, sig)
+        digest = hash.hexdigest()
+        verified = hmac.compare_digest(digest, sig)
         print("verified: {0}".format(verified))
+        decoded_sso = base64.b64encode(sso)
+        print("decoded_sso: {0}".format(decoded_sso))
 
         return self.index()
