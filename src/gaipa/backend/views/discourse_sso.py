@@ -23,5 +23,6 @@ class DiscourseSso(BrowserView):
         print("verified: {0}".format(verified))
         decoded_sso = base64.b64encode(sso)
         print("decoded_sso: {0}".format(decoded_sso))
+        import pdb; pdb.set_trace()
 
         return self.index()
