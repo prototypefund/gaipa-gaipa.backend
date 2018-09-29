@@ -2,14 +2,24 @@
 
 from gaipa.backend import _
 from Products.Five.browser import BrowserView
-# from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+
+import base64
+import hashlib
+import hmac
 
 
 class DiscourseSso(BrowserView):
-    # If you want to define a template here, please remove the template from
-    # the configure.zcml registration of this view.
-    # template = ViewPageTemplateFile('discourse_sso.pt')
-
     def __call__(self):
-        print(self.request.__dict__)
+        secret = 'f#jfUQ^yw9a*X@3%#Kn5xF#0k'
+        sso = self.request.get('sso')
+        sig = self.request.get('sig')
+        hash = hmac.new(
+            secret,
+            sso,
+            hashlib.sha256,
+        )
+        hmac_calculated = base64.b64encode(hash.digest())
+        verified = hmac.compare_digest(hmac_calculated, sig)
+        print("verified: {0}".format(verified))
+
         return self.index()
