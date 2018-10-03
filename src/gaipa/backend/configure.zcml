@@ -56,7 +56,7 @@
     allow_credentials="true"
     layer="gaipa.backend.interfaces.IGaipaBackendLayer"
     expose_headers="Content-Length,X-My-Header"
-    allow_headers="DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Accept"
+    allow_headers="DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Accept,Authorization"
     max_age="3600"
     />
 
